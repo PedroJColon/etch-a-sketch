@@ -14,6 +14,13 @@ function drawBoard() {
     gatherCells();
 }
 
+function resetBoard() {
+    const gridContainer = document.querySelector(".grid-container");
+    while (gridContainer.hasChildNodes()) {
+        gridContainer.removeChild(gridContainer.lastChild);
+    }
+}
+
 function gatherCells() {
     const cells = document.querySelectorAll(".cell");
     cells.forEach(cell => {
@@ -30,5 +37,6 @@ const data = document.querySelector("#submit-button");
 data.addEventListener("click", (e) => {
     const userNumber = document.querySelector("input");
     numOfCells = userNumber.value;
+    resetBoard();
     drawBoard();
 });
