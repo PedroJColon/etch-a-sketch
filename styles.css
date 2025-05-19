@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 15%;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    height: 260px;
+    width: 260px;
+}
+
+.cell {
+    display: flex;
+    height: 16px;
+    width: 16px;
+    background-color: gray;
+}
+
+.cell:hover {
+    background-color: aqua;
+}
