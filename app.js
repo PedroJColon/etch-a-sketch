@@ -1,4 +1,4 @@
-const numOfCells = 16;
+let numOfCells = 16;
 
 function drawBoard() {
     const gridContainer = document.querySelector(".grid-container");
@@ -11,13 +11,24 @@ function drawBoard() {
             gridContainer.appendChild(cell);
         }
     }
+    gatherCells();
 }
 
-drawBoard();
-
-const cells = document.querySelectorAll(".cell");
-cells.forEach(cell => {
+function gatherCells() {
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => {
     cell.addEventListener("mouseover", (e) => {
-        e.target.style.backgroundColor = "red";
+        const targetCell = e.target.closest(".cell");
+        if (targetCell) {
+            targetCell.style.backgroundColor = "red";
+        }
+        });
     });
+}
+
+const data = document.querySelector("#submit-button");
+data.addEventListener("click", (e) => {
+    const userNumber = document.querySelector("input");
+    numOfCells = userNumber.value;
+    drawBoard();
 });
