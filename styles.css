@@ -2,7 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 15%;
+    padding-top: 12%;
+}
+
+.flex-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid-container {
@@ -22,6 +28,8 @@
     background-color: gray;
 }
 
-.cell:hover {
-    background-color: aqua;
+.cells-form {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
 }
